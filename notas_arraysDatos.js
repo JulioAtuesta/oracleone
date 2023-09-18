@@ -1,11 +1,14 @@
 // el + se toma como concatenaciòn de cadenas
-// aunque sean strings js los interpreta como numeros cuando hay - * /
+// aunque sean strings, js interpreta los numeros cuando hay - * /
+// el scope de let se limita a su bloque de codigo, var esta disponible en todos los bloques (no es global)
+// var no deberìa usarse en codigo nuevo 
 let one ='100' + '10'; 
+let one_ ='10' * '7'; //70 
 console.log(one);
+// se puede hacer parse a una string de entrada, 
+//en caso que no sea un numero la funcion retorna NaN (not a number) y No genera error
 let dos = parseInt('100') + parseFloat('10');
 console.log(dos);
-//  se puede hacer parse a una string de entrada, en caso que no sea un numero la funcion retorna NaN (not a number) y No genera error
-// el scope de let se limita a su bloque de codigo, var esta disponible en todos los bloques (global?) var no deberìa usarse en codigo nuevo 
 
 /* Plantillas de trexto */
 let comillas =' ` ';
@@ -48,17 +51,43 @@ console.log(lista.shift());
 
 filtro = lista.filter(elements => elements.length>3);
 console.log(filtro);
-/* modifica la lista, la orderna alfabetica o numericamente, tambien se usa para retornar valores booleanos si el numero es mayor o menor*/
+/*sort modifica la lista, la orderna alfabetica o numericamente, tambien se usa para retornar valores booleanos si el numero es mayor o menor*/
 lista.sort();
 console.log(lista);
-/* join retorna una string */
+/* join retorna una string compuesto de los elementos de la lista separados por el parametro*/
 console.log(lista.join('-'));
 console.log(`dos esta en el index ${lista.indexOf('dos')}`); //index of
 concatenacion = lista.concat(lista_dos);//concatc retorna, no afecta al elemento base
 console.log(concatenacion);
 /*
-? == compara valor  === compara valor y tipo de dato, '10' es diferente de 10, los operadores booleanos retornan true o false
-? not ! and && or || estan en orden jerarquico 
-*/
-console.log(lista_dos.includes(2)); // INCLUDES retorna true or false
-
+? == compara valor, === compara valor y tipo de dato, '10' != de 10, los operadores booleanos retornan true o false
+? not ! and && or || estan en orden jerarquico */
+// INCLUDES retorna true or false, para saber si la lista contiene un elemento, puede usarse tambièn indexOf
+console.log(lista_dos.includes(2)); 
+/*
+!String Search Methods
+?String indexOf()
+?String lastIndexOf()
+?String search()
+?String match()
+?String matchAll()
+?String includes()
+?String startsWith()
+?String endsWith()
+String length
+String slice()
+String substring()
+String substr()
+String replace()
+String replaceAll()
+String toUpperCase()
+String toLowerCase()
+String concat()
+String trim()
+String trimStart()
+String trimEnd()
+String padStart()
+String padEnd()
+String charAt()
+String charCodeAt()
+String split() */

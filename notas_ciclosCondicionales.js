@@ -22,8 +22,9 @@ if(0){
 ?for in
 */
 console.log(lista);
-for(let i=0; i<=lista.length; i++){  // For
-    op=lista[i];  
+ for(let op of lista){ // similar a for each o for i in list
+//for(let i=0; i<=lista.length; i++){  // For
+   // op=lista[i];  
 switch (op){                         // Switch case 
     case 1:
         console.log(`${op} cumple el caso uno`);
@@ -69,3 +70,32 @@ for (let key in dick) {                          // for_in
                numbero += dick[key] + '_'; // usar un metodo pop para diccionarios
         }
 }console.log('numberos: '+numbero);
+
+
+/*  Fizz Buzz */
+
+function fizzbuzz(numero){
+
+let mul3 = numero;
+let mul5 = numero;
+if(numero == 0){return(`${numero}: void`)};
+
+while(mul3 > 0){
+        mul3 = mul3 - 3;
+        if(mul5 > 0){
+            mul5 = mul5 - 5;
+        }
+    }if(mul3 == 0){
+        if(mul5 == 0){
+            return(`${numero}: FizzBuzz`);
+        }else {return(`${numero}: Fizz`);}
+    }else if(mul5 == 0){
+        return(`${numero}: Buzz`);
+    }else{return(`${numero}: void`)}
+}   
+
+const listado =[7,9,54,1,2,-2,0,0,97,8,6,76,8,54,12,32,45,68,74,68,98,85,26,69,85,74,654,53,66];
+console.log('FizzBuzz');
+for(let i of listado){
+    console.log(fizzbuzz(i));
+}
